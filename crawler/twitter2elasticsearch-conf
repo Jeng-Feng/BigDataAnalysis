@@ -1,0 +1,16 @@
+input{
+	twitter {
+	    consumer_key => "Xp7MuJeniplsKSm01ZHAvlTqx"
+	    consumer_secret => "ag9rU1AxorluvTyXc4kz2I56S1K4lZyZdOFUjMBrpkBfetdOVo"
+	    oauth_token => "279775375-tVXzqsKpVO6y030btX0UU0UXHlSBwU3ZA4hm8M8Z"
+	    oauth_token_secret => "gdw1fLAg7RSEN0e0sahHhwsV8rXOBdOoaMRIqFdoElcr7"
+	    keywords => ["Trump"]
+	    full_tweet => true
+	}
+}
+output{
+		elasticsearch{
+                    index => "twitter"
+                }
+}
+
