@@ -1,0 +1,10 @@
+input{
+	elasticsearch{
+	       index => "twitter"
+        }
+}
+output{
+		file{
+                    path => "./test-%{+YYYY-MM-dd}.txt"
+                }
+}
