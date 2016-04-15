@@ -1,6 +1,6 @@
 #Data Coolection and Persistence
 利用Elasticsearch, logstash蒐集Twitter社群推文內容並儲存
-
+***
 ##資料格式 ( JSON Format )
 ###資料欄位
 + created_at - 發表推文時間
