@@ -1,5 +1,6 @@
 #Data Coolection and Persistence
 利用Elasticsearch, logstash蒐集Twitter社群推文內容並儲存
+
 ##資料格式 ( JSON Format )
 ###資料欄位
 + created_at - 發表推文時間
@@ -29,14 +30,18 @@
 		+ time_zone - 所在時區
 		+ geo_enabled - 定位開啟與否
 		+ lang - 語言
+
 ##資料來源 ( Data Sources )
 ### (1) API 來源：
 Twitter API  [The Link][1] 
 [1]: https://dev.twitter.com/overview/documentation/ "Developer Web Site of Twitter"
+
 ### (2) 內容主題：
 搜尋Twitter推文有關美國總統候選人-川普【Trump】相關的推文討論
+
 ### (3) 查詢字串：
 查詢字串：Trump
+
 ##程式碼連結
 + 使用logstash抓取twitter資料並儲存於Elasticsearch [[view code]][2]
 
