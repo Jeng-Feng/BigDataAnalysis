@@ -1,36 +1,45 @@
-#Homework 1：Data Coolection and Persistence
+#Data Coolection and Persistence
+利用Elasticsearch, logstash蒐集Twitter社群推文內容並儲存
 ##資料格式 ( JSON Format )
 ###資料欄位
-+ Red
-+ Green
-+ 
++ created_at - 發表推文時間
++ text -  推文內容
++ source - 推文來源網址
++ user - 推文者資訊
+	+ id - 使用id
+	+ name - 使用名稱
+	+ location - 位置
+	+ followers_count - 追隨者人數
+	+ friends_count - 好友人數
+	+ favourites - 設定為最愛數量
+	+ time_zone - 所在時區
+	+ geo_enabled - 定位開啟與否
+	+ lang - 語言
++  retweeted_status- 推文回應資訊
+	+ created_at - 發表推文時間
+	+ text -  推文內容
+	+ source - 推文來源網址
+	+ user - 推文者資訊
+		+ id - 使用id
+		+ name - 使用名稱
+		+ location - 位置
+		+ followers_count - 追隨者人數
+		+ friends_count - 好友人數
+		+ favourites - 設定為最愛數量
+		+ time_zone - 所在時區
+		+ geo_enabled - 定位開啟與否
+		+ lang - 語言
 ##資料來源 ( Data Sources )
 ### (1) API 來源：
+Twitter API  [The Link][1] 
+[1]: https://dev.twitter.com/overview/documentation/ "Developer Web Site of Twitter"
 ### (2) 內容主題：
+搜尋Twitter推文有關美國總統候選人-川普【Trump】相關的推文討論
 ### (3) 查詢字串：
-
-1. read
-2. re1
-3. redd
+查詢字串：Trump
 ##程式碼連結
-+ twitter資料抓取並轉入Elasticsearch [twitter2elasticsearch-conf][1]
++ 使用logstash抓取twitter資料並儲存於Elasticsearch [[view code]][2]
 
-[1]: http://google.com/  "twitter2elasticsearch-conf"
-
-<pre><code>
-input{
-	twitter {
-	    consumer_key => "Xp7MuJeniplsKSm01ZHAvlTqx"
-	    consumer_secret => "ag9rU1AxorluvTyXc4kz2I56S1K4lZyZdOFUjMBrpkBfetdOVo"
-	    oauth_token => "279775375-tVXzqsKpVO6y030btX0UU0UXHlSBwU3ZA4hm8M8Z"
-	    oauth_token_secret => "gdw1fLAg7RSEN0e0sahHhwsV8rXOBdOoaMRIqFdoElcr7"
-	    keywords => ["Trump"]
-	    full_tweet => true
-	}
-}
-output{
-		elasticsearch{
-                    index => "twitter"
-        }
-}
-</core></pre>
+[2]: https://github.com/Jeng-Feng/BigDataAnalysis/blob/master/crawler/twitter2elasticsearch-conf  "view code for twitter2elasticsearch-conf"
++ 透過logstas讀取Elasticsearch資料輸出到文字檔案 (預設json格式) [[view code]][3]
+[3]: https://github.com/Jeng-Feng/BigDataAnalysis/blob/master/crawler/elasticsearch2Json-conf "view code for elasticsearch2Json-conf"
