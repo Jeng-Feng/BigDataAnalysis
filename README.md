@@ -46,5 +46,5 @@ Twitter API  [The Link][1]
 + 使用logstash抓取twitter資料並儲存於Elasticsearch [[view code]][2]
 
 [2]: https://github.com/Jeng-Feng/BigDataAnalysis/blob/master/crawler/twitter2elasticsearch-conf  "view code for twitter2elasticsearch-conf"
-+ 透過logstas讀取Elasticsearch資料輸出到文字檔案 (預設json格式) [[view code]][3]
++ 透過logstash讀取Elasticsearch資料輸出到文字檔案 (預設json格式) [[view code]][3]
 [3]: https://github.com/Jeng-Feng/BigDataAnalysis/blob/master/crawler/elasticsearch2Json-conf "view code for elasticsearch2Json-conf"
